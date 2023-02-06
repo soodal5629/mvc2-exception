@@ -13,6 +13,7 @@ public class ServletExController {
 
     @GetMapping("/error-ex")
     public void errorEx() {
+        // 어떤한 Exception 이든 500에러 리턴
         throw new RuntimeException("예외 발생!");
     }
 
