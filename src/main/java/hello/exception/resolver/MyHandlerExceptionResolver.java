@@ -16,6 +16,7 @@ public class MyHandlerExceptionResolver implements HandlerExceptionResolver {
         try {
             if (ex instanceof IllegalArgumentException) {
                 log.info("IllegalArgumentException resolver to 400");
+                // sendError 때문에 결국 다시 BasicErrorController 호출하게 됨
                 response.sendError(HttpServletResponse.SC_BAD_REQUEST, ex.getMessage());
                 return new ModelAndView(); // 정상적으로 WAS 까지 리턴됨
             }
