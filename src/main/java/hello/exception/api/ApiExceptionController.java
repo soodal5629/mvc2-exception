@@ -42,8 +42,8 @@ public class ApiExceptionController {
 
     @GetMapping("/api/default-handler-ex")
     public String defaultException(@RequestParam Integer data) {
-        // data에 숫자가 아닌 문자가 들어왔을 때 http 상태코드가 500 으로 리턴해줘야 하는데
-        // DefaultHandlerExceptionResolver가 처리해줘서 http 상태코드가 400으로 리턴됨
+        // data에 숫자가 아닌 문자가 들어왔을 때 TypeMismatchException이 발생하여 http 상태코드가 500 으로 리턴해줘야 하는데
+        // DefaultHandlerExceptionResolver가 자동으로 처리해줘서 http 상태코드가 400으로 리턴됨
         return "ok";
     }
 
